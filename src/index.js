@@ -1,32 +1,24 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './App';
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import store from "./redux";
+import WebfontLoader from "@dr-kobros/react-webfont-loader";
 
-const store = createStore(function(state, action) {
-  const _state = state == null ? {
-    donate: 0,
-    message: '',
-  } : state;
+import App from "./App";
 
-  switch (action.type) {
-    case 'UPDATE_TOTAL_DONATE':
-      return Object.assign({}, _state, {
-        donate: _state.donate + action.amount,
-      });
-    case 'UPDATE_MESSAGE':
-      return Object.assign({}, _state, {
-        message: action.message,
-      });
+import "./global-styles.js";
 
-    default: return _state;
+const fontConfig = {
+  google: {
+    families: ["Raleway"]
   }
-});
+};
 
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+  <WebfontLoader config={fontConfig}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </WebfontLoader>,
+  document.getElementById("root")
 );
