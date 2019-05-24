@@ -1,7 +1,7 @@
 {
   "name": "tamboon-react",
   "version": "1.0.0",
-  "description": "Test Omise code challenge for frontend developer",
+  "description": "Code sample",
   "main": "src/index.js",
   "repository": "git@git.omise.co:ratchagarn/tamboon-react.git",
   "author": "Ratchagarn Naewbuntad <ratchagarn@omise.co>",
@@ -52,14 +52,7 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
-    "setupFiles": [
-      "<rootDir>/src/polyfills.js",
-      "<rootDir>/src/setupTests.js"
-    ],
-    "unmockedModulePathPatterns": [
-      "react",
-      "enzyme",
-      "jest-enzyme"
-    ]
+    "setupFiles": ["<rootDir>/src/polyfills.js", "<rootDir>/src/setupTests.js"],
+    "unmockedModulePathPatterns": ["react", "enzyme", "jest-enzyme"]
   }
 }
